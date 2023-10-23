@@ -1,0 +1,23 @@
+---
+
+interface Props {
+    label?: string;
+    icon?: string;
+}
+
+const { label, icon } = Astro.props;
+
+
+
+---
+
+<div class="hint">
+    {icon && <span><slot /></span>}
+    {label && <span>{label}</span>}
+</div>
+
+<style>
+    .hint {
+        
+    }
+</style>
