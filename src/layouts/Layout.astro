@@ -21,31 +21,75 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+
+	@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+
+		--color--text-primary: #311C6B;
+		--color--text-secondary: rgba(49, 28, 107, .90);
+		--color--text-tertiary: #41179B;
+		--color--text-accent: #6E40F1;
+		--color--text-disabled: rgba(49, 28, 107, .50);
+		--color--surface-paper: #FFFFFF;
+		--color--surface-brand: #311C6B;
+		--color--surface-accent: #6E40F1;
+		--color--surface-disabled: #F9F7FE;
+		--color--border-primary: rgba(49, 28, 107, .20);
+		--color--border-secondary: rgba(49, 28, 107, .40);
+		--color--border-accent: rgba(49, 28, 107, .50);
+		--color--border-disabled: rgba(49, 28, 107, .20);
+
+
+		--color--ui-info-text: #B9D8EF;
+		--color--ui-info-surface: #0C4B79;
+		--color--ui-positive-text: #BFEBD6;
+		--color--ui-positive-surface: #145E3A;
+		--color--ui-negative-text: #F3C0B6;
+		--color--ui-negative-surface: #8C1D08;
+		--color--ui-warning-text: #FFF2C5;
+		--color--ui-warning-surface: #7C310B;
+		--color--ui-brand-text: #DFD5FC;
+		--color--ui-brand-surface: var(--color--text-primary);
+		--color--ui-system-text: #FBDCEE;
+		--color--ui-system-surface: #88134F;
+
+
+		--radius--small: 6px;
+		--radius--default: 12px;
+		--radius--medium: 18px;
+		--radius--large: 24px;
+
+		--elevation--small: ;
+		--elevation--default: ;
+		--elevation--medium: ;
+		--elevation--large: ;
+
+		--spacing--small: 4px ;
+		--spacing--default: 8px ;
+		--spacing--medium: 12px ;
+		--spacing--large: 16px ;
+		--spacing--xlarge: 20px ;
+
+		--distance--small: 16px ;
+		--distance--default: 20px ;
+		--distance--medium: 28px ;
+		--distance--large: 40px ;
+
+		--font--default: font-family: 'Inter var', system-ui, sans-serif;
+		--font--headings: font-family: 'Moranga', system-ui, serif;
+		--font--monospace: font-family: 'Fira Code', monospace;
+
+		@media (prefers-color-scheme: dark) {
+			
+		}
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+	body, html {
+		@apply text-primary bg-surface-paper font-default p-0 m-0;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	.digits {
+		@apply font-monospace text-base bg-purple-50 flex justify-center items-center px-2 h-6 rounded-md;
 	}
 </style>
